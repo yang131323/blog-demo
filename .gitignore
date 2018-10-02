@@ -5,6 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 node_modules/
 dist/
+db.js
 *.config
 
 # Editor directories and files
