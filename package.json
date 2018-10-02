@@ -1,0 +1,29 @@
+{
+  "name": "ouyangblog",
+  "version": "1.0.0",
+  "description": "Try to build a blog separated from the front and back",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --use_strict app.js"
+  },
+  "keywords": [
+    "sequelize",
+    "async"
+  ],
+  "author": "Ou yang",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yang131323/createBlog.git"
+  },
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "mime": "^1.6.0",
+    "mysql": "^2.16.0",
+    "mz": "^2.7.0",
+    "nunjucks": "^2.5.2",
+    "sequelize": "^3.33.0"
+  }
+}
