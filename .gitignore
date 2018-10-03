@@ -14,3 +14,7 @@ db.js
 *.ntvs*
 *.njsproj
 *.sln
+
+.vscode/
+customer.config.js
+unpackage/
