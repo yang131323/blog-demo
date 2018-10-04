@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'ant-design-vue/dist/antd.css'
-import Icon from 'ant-design-vue/lib/icon'
+import { Input, Icon } from 'ant-design-vue'
 
 Vue.component(Icon.name, Icon)
+Vue.component(Input.name, Input)
+
+Vue.use(Input)
+Vue.use(Icon)
 
 Vue.config.productionTip = false
 

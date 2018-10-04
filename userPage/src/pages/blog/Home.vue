@@ -7,6 +7,7 @@
     overflow: hidden;
 
     .my-blog-home-article {
+      flex: 1;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -14,13 +15,14 @@
       img {
         width: 100%;
         height: 400 * @vw;
+        min-height: 280px;
       }
 
       .personal-profile-container {
         display: flex;
         flex-direction: row;
         margin: auto;
-        height: 400 * @vw;
+        height: 450 * @vw;
         min-height: 250px;
       }
     }
@@ -29,13 +31,23 @@
 
 <template>
   <div class="my-blog-home-page">
+    <blog-header v-model="searchKey"></blog-header>
     <article class="my-blog-home-article">
-      <nav></nav>
       <img src="../../assets/notebook-1280538.jpg" alt="photo" width="100%" height="400">
+      <blog-icon :information="information" :iconArr="iconArr" @detail="toThreeParty"></blog-icon>
       <article class="personal-profile-container">
-        <introduction-card :prompt="prompt" :photo="require('../../assets/logoO.png')" :information="information"></introduction-card>
-        <message-card :prompt="prompt['introduction']" :photo="require('../../assets/avatar.jpg')" :introduction="aboutMe.introduction"></message-card>
+        <introduction-card
+          :prompt="prompt"
+          :photo="require('../../assets/logoO.png')"
+          :information="information">
+        </introduction-card>
+        <message-card
+          :prompt="prompt['introduction']"
+          :photo="require('../../assets/avatar.jpg')"
+          :introduction="aboutMe.introduction">
+        </message-card>
       </article>
+      <p>{{searchKey}}</p>
     </article>
     <footer></footer>
   </div>
@@ -44,11 +56,15 @@
 <script>
 import MessageCard from '@/components/blog/MessageCard'
 import IntroductionCard from '@/components/blog/IntroductionCard'
+import BlogHeader from '@/components/Header'
+import BlogIcon from '@/components/blog/ImageIcon'
 import { mapPrompt } from '@/utils'
 
 export default {
   data () {
     return {
+      searchKey: '',
+      iconArr: ['github', 'medium', 'twitter', 'zhihu', 'facebook'],
       information: {
         name: 'willKing O',
         birth: '1987.11.11',
@@ -85,11 +101,16 @@ export default {
   methods: {
     mapPrompt(...arg) {
       mapPrompt(...arg)
+    },
+    toThreeParty (val) {
+      console.log(val)
     }
   },
   components: {
     MessageCard,
-    IntroductionCard
+    IntroductionCard,
+    BlogHeader,
+    BlogIcon
   }
 }
 </script>

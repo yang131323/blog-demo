@@ -5,9 +5,9 @@
 .personal-profile-card {
   display: flex;
   flex-direction: column;
-  margin: -50px 10*@vw 0 10*@vw;
+  margin: -50*@vw 10*@vw 0 10*@vw;
   padding: 15 * @vw;
-  width: 500 * @vw;
+  width: 400 * @vw;
   min-height: 250px;
   background-color: @iCardBackground;
 

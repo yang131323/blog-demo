@@ -4,9 +4,9 @@
 .personal-profile-card {
   display: flex;
   flex-direction: column;
-  margin: -50px 10*@vw 0 10*@vw;
+  margin: -50*@vw 10*@vw 0 10*@vw;
   padding: 15 * @vw;
-  width: 500 * @vw;
+  width: 400 * @vw;
   min-height: 250px;
   background-color: @iCardBackground;
 
@@ -25,7 +25,7 @@
     color: @iBackground;
     font-size: 20 * @vw;
     text-align: center;
-    height: 270 * @vw;
+    height: 100%;
     border: 1*@vw solid @iBackground;
     overflow: hidden; // 防止横向溢出
     text-overflow: ellipsis; // 显示省略
@@ -39,13 +39,13 @@
     p {
       padding: 0;
       margin: 0;
-      line-height: 30 * @vw;
+      // line-height: 30 * @vw;
       text-align: left;
       color: @iBackground;
-      max-height: 180 * @vw;
-      font-size: 20 * @vw;
-      -webkit-line-clamp: 6;
+      // max-height: 330 * @vw;
+      font-size: 18 * @vw;
       overflow: hidden; // 防止横向溢出
+      text-overflow: ellipsis; // 显示省略
     }
   }
 
