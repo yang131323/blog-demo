@@ -2,17 +2,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Test from './test'
+import Blog from './blog'
 
 Vue.use(Router)
 
 const routes = [
   {
     path: '/home',
-    name: 'HelloWorld',
-    component: HelloWorld
+    component: HelloWorld,
+    children: [].concat(Blog),
+    meta: {
+      title: '博客'
+    }
   }, {
     path: '/',
-    name: 'Test',
     component: resolve => require(['@/pages/Test'], resolve),
     children: [].concat(Test),
     meta: {

@@ -4,7 +4,7 @@
 
 <template>
   <transition>
-    <img src="../assets/forest-931706_1920.jpg" alt="forest" wdith="100%" @click="toOne">
+    <img src="../assets/forest-931706_1920.jpg" alt="forest" width="100%" @click="toOne">
   </transition>
 </template>
 
