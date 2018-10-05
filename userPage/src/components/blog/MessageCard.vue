@@ -42,7 +42,8 @@
       // line-height: 30 * @vw;
       text-align: left;
       color: @iBackground;
-      // max-height: 330 * @vw;
+      max-height: 240 * @vw;
+      min-height: 150px;
       font-size: 18 * @vw;
       overflow: hidden; // 防止横向溢出
       text-overflow: ellipsis; // 显示省略

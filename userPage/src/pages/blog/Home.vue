@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+    background-color: white;
 
     .my-blog-home-article {
       flex: 1;
@@ -12,10 +13,10 @@
       display: flex;
       flex-direction: column;
 
-      img {
+      .main-img {
         width: 100%;
-        height: 400 * @vw;
-        min-height: 280px;
+        height: 600 * @vw;
+        min-height: 360px;
       }
 
       .personal-profile-container {
@@ -25,6 +26,35 @@
         height: 450 * @vw;
         min-height: 250px;
       }
+
+      .person-content-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 8% 0 8%;
+        margin: 50*@vw 0 30*@vw 0;
+
+        .article-content-container {
+          width: 70%;
+          padding: 0;
+          margin: 0 30*@vw 20*@vw 0;
+          display: flex;
+          flex-direction: column;
+
+          footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 20*@vw 0;
+          }
+        }
+
+        .person-message {
+          display: flex;
+          flex-direction: column;
+          width: 25%;
+          margin: 0 0 0 20*@vw;
+        }
+      }
     }
   }
 </style>
@@ -33,9 +63,9 @@
   <div class="my-blog-home-page">
     <blog-header v-model="searchKey"></blog-header>
     <article class="my-blog-home-article">
-      <img src="../../assets/notebook-1280538.jpg" alt="photo" width="100%" height="400">
+      <img src="../../assets/notebook-1280538.jpg" alt="photo" width="100%" height="400" class="main-img">
       <blog-icon :information="information" :iconArr="iconArr" @detail="toThreeParty"></blog-icon>
-      <article class="personal-profile-container">
+      <header class="personal-profile-container">
         <introduction-card
           :prompt="prompt"
           :photo="require('../../assets/logoO.png')"
@@ -46,8 +76,24 @@
           :photo="require('../../assets/avatar.jpg')"
           :introduction="aboutMe.introduction">
         </message-card>
-      </article>
-      <p>{{searchKey}}</p>
+      </header>
+      <div class="person-content-container">
+        <main class="article-content-container">
+          <blog-card-list :items="articleArr" @detail="articleDetail"></blog-card-list>
+          <footer>
+            <a-button @click="turnPage(-1)">
+              <a-icon type="double-left" />Backward
+            </a-button>
+            <a-button @click="turnPage(1)">
+              Forward<a-icon type="double-right" />
+            </a-button>
+          </footer>
+        </main>
+        <section class="person-message">
+          <blog-catalogue :catalogueArr="catalogueArr"></blog-catalogue>
+          <blog-contact :contactArr="contactArr" @detail="toContact"></blog-contact>
+        </section>
+      </div>
     </article>
     <footer></footer>
   </div>
@@ -58,12 +104,19 @@ import MessageCard from '@/components/blog/MessageCard'
 import IntroductionCard from '@/components/blog/IntroductionCard'
 import BlogHeader from '@/components/Header'
 import BlogIcon from '@/components/blog/ImageIcon'
+import BlogCardList from '@/components/article/ArticleCardList'
+import BlogContact from '@/components/aside/Contact'
+import BlogCatalogue from '@/components/aside/Catalogue'
+import articleData from '@/store/data/articleData'
 import { mapPrompt } from '@/utils'
 
 export default {
   data () {
     return {
       searchKey: '',
+      articleArr: articleData,
+      contactArr: ['google', 'facebook', 'wechat', 'qq', 'weibo'],
+      catalogueArr: ['before you break my heart', 'cry my shouder', 'something just like this', '我就是世界上最伤心的人----你知道吗', '我知道'],
       iconArr: ['github', 'medium', 'twitter', 'zhihu', 'facebook'],
       information: {
         name: 'willKing O',
@@ -104,13 +157,29 @@ export default {
     },
     toThreeParty (val) {
       console.log(val)
+    },
+    articleDetail (val) {
+      console.log(val)
+    },
+    toContact (val) {
+      console.log(val)
+    },
+    turnPage (val) {
+      if (val === 1) {
+        console.log('to front one page')
+      } else {
+        console.log('to back one page')
+      }
     }
   },
   components: {
     MessageCard,
     IntroductionCard,
     BlogHeader,
-    BlogIcon
+    BlogIcon,
+    BlogCardList,
+    BlogContact,
+    BlogCatalogue
   }
 }
 </script>

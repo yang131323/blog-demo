@@ -12,8 +12,8 @@
   height: 50 * @vw;
   min-height: 30px;
   padding: 11*@vw 40*@vw 0 0;
-  opacity: 0.5;
-  background-color: @iTitle;
+  opacity: 0.4;
+  background-color: @iContent;
 
   ul {
     flex-grow: 1;
@@ -58,8 +58,7 @@
       placeholder="搜索文章标题"
       :value="value"
       @input="$emit('input', $event.target.value)"
-      :style="{width: '320px'}"
-    />
+      :style="{width: '320px'}"/>
   </nav>
 </template>
 

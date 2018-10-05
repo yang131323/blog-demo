@@ -7,7 +7,7 @@
     height: 240 * @vw;
     min-height: 180px;
     width: 40%;
-    top: 8%;
+    top: 25%;
     padding: 0;
     margin: 0;
     left: 30%;
@@ -21,7 +21,7 @@
       color: @iBackground;
     }
 
-    h3 {
+    h1 {
       padding: 0;
       margin: 10*@vw 0;
       font-size: 36 * @vw;
@@ -44,7 +44,7 @@
 
 <template>
   <section class="img-content-container">
-    <h3>{{information && information.name || '无'}}</h3>
+    <h1>{{information && information.name || '无'}}</h1>
     <p>{{information && information.career || '无'}}</p>
     <div class="icon-container">
       <div class="icon" v-for="(item, index) in iconArr" :key="index" @click="$emit('detail', item)">
