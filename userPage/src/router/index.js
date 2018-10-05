@@ -15,13 +15,18 @@ const routes = [
       title: '博客'
     }
   }, {
+    path: '/article/:id',
+    component: resolve => require(['@/pages/article/Article'], resolve),
+    meta: {
+      title: '博客 - 文章'
+    }
+  }, {
     path: '/',
     component: resolve => require(['@/pages/Test'], resolve),
     children: [].concat(Test),
     meta: {
       title: '测试'
     }
-
   }
 ]
 

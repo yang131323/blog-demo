@@ -33,24 +33,6 @@
       text-align: left;
     }
   }
-
-  .icon-container {
-    display: flex;
-    justify-content: center;
-    margin: 10*@vw 0 0 0;
-
-    .icon {
-      padding: 8*@vw 10*@vw;
-      margin: 0 6*@vw;
-      border: 1*@vw solid @iBorder;
-    }
-  }
-
-  .contact-me {
-    height: 80 * @vw;
-    min-height: 80px;
-    margin: 20*@vw 0;
-  }
 </style>
 
 <template>
@@ -58,7 +40,7 @@
     <fieldset>
       <legend>{{title}}</legend>
       <ol>
-        <li v-for="item in catalogueArr" :key="item"><a href="">{{item}}</a></li>
+        <li v-for="item in catalogueArr" :key="item.title + item.url"><a :href="item.url">{{item.title}}</a></li>
       </ol>
     </fieldset>
   </section>

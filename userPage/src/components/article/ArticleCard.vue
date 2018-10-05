@@ -29,7 +29,6 @@
         font-size: 16 * @vw;
         color: @iContent;
         padding: 0;
-        line-height: 24 * @vw;
         max-height: 170 * @vw;
         overflow: hidden; // 防止横向溢出
         text-overflow: ellipsis; // 显示省略 ellipsis

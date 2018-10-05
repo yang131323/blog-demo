@@ -52,10 +52,27 @@
           display: flex;
           flex-direction: column;
           width: 25%;
-          margin: 0 0 0 20*@vw;
+          margin: 20*@vw 0 0 20*@vw;
         }
       }
     }
+
+    .blog-footer {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 60 * @vw;
+      min-height: 40px;
+      background-color: @iContent;
+      text-align: center;
+    }
+
+    .footer-h3 {
+        text-align: center;
+        margin: auto;
+        font-size: 20 * @vw;
+        color: @iBackground;
+      }
   }
 </style>
 
@@ -95,18 +112,18 @@
         </section>
       </div>
     </article>
-    <footer></footer>
+    <footer class="blog-footer">
+      <h3 class="footer-h3">{{'author@willKing && OuYang'}}</h3>
+    </footer>
   </div>
 </template>
 
 <script>
 import MessageCard from '@/components/blog/MessageCard'
 import IntroductionCard from '@/components/blog/IntroductionCard'
-import BlogHeader from '@/components/Header'
 import BlogIcon from '@/components/blog/ImageIcon'
 import BlogCardList from '@/components/article/ArticleCardList'
-import BlogContact from '@/components/aside/Contact'
-import BlogCatalogue from '@/components/aside/Catalogue'
+import BlogFieldset from '@/components/aside/Fieldset'
 import articleData from '@/store/data/articleData'
 import { mapPrompt } from '@/utils'
 
@@ -116,7 +133,22 @@ export default {
       searchKey: '',
       articleArr: articleData,
       contactArr: ['google', 'facebook', 'wechat', 'qq', 'weibo'],
-      catalogueArr: ['before you break my heart', 'cry my shouder', 'something just like this', '我就是世界上最伤心的人----你知道吗', '我知道'],
+      catalogueArr: [{
+        url: '/',
+        title: 'before you break my heart'
+      }, {
+        url: '/',
+        title: 'cry my shouder'
+      }, {
+        url: '/',
+        title: 'something just like this'
+      }, {
+        url: '/',
+        title: '我就是世界上best的人----你知道吗'
+      }, {
+        url: '/',
+        title: '我知道'
+      }],
       iconArr: ['github', 'medium', 'twitter', 'zhihu', 'facebook'],
       information: {
         name: 'willKing O',
@@ -175,11 +207,9 @@ export default {
   components: {
     MessageCard,
     IntroductionCard,
-    BlogHeader,
     BlogIcon,
     BlogCardList,
-    BlogContact,
-    BlogCatalogue
+    BlogFieldset
   }
 }
 </script>
