@@ -17,6 +17,7 @@ app.use((ctx, next) => {
 
 const main = async function (ctx, next) {
   console.log('come on');
+  console.log('app.env' + app.env)
   ctx.response.type = 'json';
   const obj = JSON.stringify(data);
   ctx.response.body = obj;
