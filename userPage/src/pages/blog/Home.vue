@@ -126,6 +126,8 @@ import BlogCardList from '@/components/article/ArticleCardList'
 import BlogFieldset from '@/components/aside/Fieldset'
 import articleData from '@/store/data/articleData'
 import { mapPrompt } from '@/utils'
+import { HOME_MESSAGE } from '@/store'
+import { mapActions } from 'vuex'
 
 export default {
   data () {
@@ -183,14 +185,27 @@ export default {
       }
     }
   },
+  created: async function () {
+    await this.reqData()
+  },
   methods: {
+    ...mapActions([HOME_MESSAGE]),
+    async reqData () {
+      try {
+        console.log('request')
+        const Data = await this[HOME_MESSAGE]()
+      } catch (e) {
+        console.log(e.message)
+      }
+    },
     mapPrompt(...arg) {
       mapPrompt(...arg)
     },
     toThreeParty (val) {
       console.log(val)
     },
-    articleDetail (val) {
+    async articleDetail (val) {
+      this.reqData()
       console.log(val)
     },
     toContact (val) {

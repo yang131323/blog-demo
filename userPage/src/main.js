@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import store from './store'
 import BlogContact from '@/components/aside/Contact'
 import BlogCatalogue from '@/components/aside/Catalogue'
 import BlogHeader from '@/components/Header'
@@ -27,5 +28,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
