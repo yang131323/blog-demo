@@ -194,6 +194,7 @@ export default {
       try {
         console.log('request')
         const Data = await this[HOME_MESSAGE]()
+        console.log(Data)
       } catch (e) {
         console.log(e.message)
       }

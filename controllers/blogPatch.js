@@ -9,7 +9,7 @@ const editPerson = async function (ctx, next) {
 const editContacts = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('edit contact messgae');
-  return next();
+  await next();
 };
 
 const editTechniques = async function (ctx, next) {
@@ -22,14 +22,14 @@ const editTechniques = async function (ctx, next) {
 const editArticle = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('edit article');
-  return next();
+  await next();
 }
 
 // 文章的存储方式不同，可能返回的数据类型也不同
 const editArticles = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('edit articles');
-  return next();
+  await next();
 }
 
 module.exports = {

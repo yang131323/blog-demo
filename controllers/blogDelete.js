@@ -9,7 +9,7 @@ const delPerson = async function (ctx, next) {
 const delContacts = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('del contact messgae');
-  return next();
+  await next();
 };
 
 const delTechniques = async function (ctx, next) {
@@ -22,14 +22,14 @@ const delTechniques = async function (ctx, next) {
 const delArticle = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('del article');
-  return next();
+  await next();
 }
 
 // 文章的存储方式不同，可能返回的数据类型也不同
 const delArticles = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('del articles');
-  return next();
+  await next();
 }
 
 module.exports = {

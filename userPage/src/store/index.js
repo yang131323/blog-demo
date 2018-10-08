@@ -21,7 +21,7 @@ const store =  {
   actions: {
     async [HOME_MESSAGE] ({commit}) {
       const Data = await instance.get('/')
-      return Data
+      return Data.data
     }
   },
 }

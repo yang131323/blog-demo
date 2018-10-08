@@ -9,7 +9,7 @@ const createPerson = async function (ctx, next) {
 const createContacts = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('create contact messgae');
-  return next();
+  await next();
 };
 
 const createTechniques = async function (ctx, next) {
@@ -22,14 +22,14 @@ const createTechniques = async function (ctx, next) {
 const createArticle = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('create article');
-  return next();
+  await next();
 }
 
 // 文章的存储方式不同，可能返回的数据类型也不同
 const createArticles = async function (ctx, next) {
   ctx.response.type = 'json';
   console.log('create articles');
-  return next();
+  await next();
 }
 
 module.exports = {
