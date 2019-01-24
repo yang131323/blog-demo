@@ -4,6 +4,7 @@
 .personal-profile-card {
   display: flex;
   flex-direction: column;
+  flex: 1;
   margin: -50*@vw 10*@vw 0 10*@vw;
   padding: 15 * @vw;
   width: 400 * @vw;
@@ -17,6 +18,7 @@
     height: 120 * @vw;
     padding: 5 * @vw;
     border: 3*@vw solid @iLight;
+    border-radius: 60 * @vw;
   }
 
   fieldset {
@@ -25,7 +27,7 @@
     color: @iBackground;
     font-size: 20 * @vw;
     text-align: center;
-    height: 100%;
+    // height: 100%;
     border: 1*@vw solid @iBackground;
     overflow: hidden; // 防止横向溢出
     text-overflow: ellipsis; // 显示省略
@@ -58,7 +60,7 @@
 
 <template>
   <article class="personal-profile-card">
-    <img class="avatar-photo" v-bind:src="photo" alt="Avator" width="120" heihgt="120">
+    <img class="avatar-photo" :src="photo" alt="Avator" width="120" heihgt="120">
     <fieldset class="about-me-card" @click="details">
       <legend>{{prompt}}</legend>
       <p>{{introduction}}</p>

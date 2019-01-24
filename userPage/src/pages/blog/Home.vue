@@ -15,7 +15,7 @@
 
       .main-img {
         width: 100%;
-        height: 600 * @vw;
+        height: 500 * @vw;
         min-height: 360px;
       }
 
