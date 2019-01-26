@@ -129,12 +129,12 @@ export default {
   },
   mounted: function () {
     let gitalk = new Gitalk({
-      clientID: 'e9bbe5cab49497965c55',
-      clientSecret: '9275e5b23e992c045ea1b88cee2299fe5def3581',
-      repo: 'blogTalk',
-      owner: 'yang131323',
-      admin: ['yang131323'],
-      id: location.pathname,
+      clientID: '', // 用户名
+      clientSecret: '', // 密码
+      repo: '', // 仓库名
+      owner: 'yang131323', // 仓库所有者
+      admin: ['yang131323'], // 仓库管理员
+      id: location.pathname,  // 唯一标志符
       distractionFreeMode: false
     })
     gitalk.render('gitalk-container')
