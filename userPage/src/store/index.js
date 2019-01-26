@@ -20,7 +20,7 @@ const store =  {
   mutations: {},
   actions: {
     async [HOME_MESSAGE] ({commit}) {
-      const Data = await instance.get('/')
+      const Data = await instance.get('/articles')
       return Data.data
     }
   },

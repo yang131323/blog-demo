@@ -61,8 +61,9 @@
       }
     }
 
-    .comment-container {
-      margin: 10*@vw 0;
+    #gitalk-container {
+      text-align: left;
+      margin: 10*@vw;
     }
   }
 </style>
@@ -84,12 +85,14 @@
           </aside>
         </main>
       </main>
-      <top-gitment :options="options" v-if="options"></top-gitment>
+      <div id="gitalk-container"></div>
   </div>
 </template>
 
 <script>
 import articleData from '@/store/data/articleData'
+import 'gitalk/dist/gitalk.css'
+import Gitalk from 'gitalk'
 
 export default {
   data () {
@@ -123,6 +126,18 @@ export default {
         title: '我知道'
       }],
     }
+  },
+  mounted: function () {
+    let gitalk = new Gitalk({
+      clientID: 'e9bbe5cab49497965c55',
+      clientSecret: '9275e5b23e992c045ea1b88cee2299fe5def3581',
+      repo: 'blogTalk',
+      owner: 'yang131323',
+      admin: ['yang131323'],
+      id: location.pathname,
+      distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
   },
   methods: {
     toContact (val) {

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Test from './test'
 import Blog from './blog'
+import Article from './article'
 
 Vue.use(Router)
 
@@ -15,8 +16,9 @@ const routes = [
       title: '博客'
     }
   }, {
-    path: '/article/:id',
-    component: resolve => require(['@/pages/article/Article'], resolve),
+    path: '/article',
+    component: resolve => require(['@/pages/article/index'], resolve),
+    children: [].concat(Article),
     meta: {
       title: '博客 - 文章'
     }

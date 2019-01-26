@@ -5,14 +5,14 @@ import BlogContact from '@/components/aside/Contact'
 import BlogCatalogue from '@/components/aside/Catalogue'
 import BlogHeader from '@/components/Header'
 
-import TopGitment from 'top-gitment'
 import router from './router'
 import { Input, Icon, Button } from 'ant-design-vue'
+import mavonEditor from 'mavon-editor'
 
 Vue.component(Icon.name, Icon)
 Vue.component(Input.name, Input)
 Vue.component(Button.name, Button)
-Vue.use(TopGitment)
+Vue.use(mavonEditor)
 
 Vue.component('BlogContact', BlogContact)
 Vue.component('BlogCatalogue', BlogCatalogue)
